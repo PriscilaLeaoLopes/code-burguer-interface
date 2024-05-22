@@ -1,0 +1,11 @@
+
+
+{
+  "globals": {
+    "browser": true
+  },
+  "extends": [
+   // "@eslint/js/configs/recommended"
+    //"eslint-plugin-react/configs/recommended"
+]
+}
