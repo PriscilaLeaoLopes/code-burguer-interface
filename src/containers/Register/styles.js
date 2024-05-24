@@ -11,8 +11,8 @@ export const Container = styled.div`
   align-items: center;
 `
 
-export const LoginImage = styled.img`
-height: 80%;
+export const RegisterImage = styled.img`
+height: 90%;
 
 `
 
@@ -20,7 +20,7 @@ height: 80%;
 export const ContainerItens = styled.div`
 background: #373737;
 border-radius: 0 10px 10px 0;
-height: 80%;
+height: 90%;
 padding: 25px 75px;
 display: flex;
 flex-direction: column;
@@ -44,7 +44,7 @@ h1 {
       line-height: 28px;
       color: #ffffff;
       text-align: center;
-      margin-top: 80px;
+      margin-top: 10px;
 }
 
 
@@ -56,7 +56,7 @@ export const Label = styled.p`
       font-size: 12px;
       line-height: 10px;
       color: #ffffff;
-      margin-top: 25px;
+      margin-top: ${ props => (props.error ? '12px' : '28px')};
       margin-bottom: 5px;
 `
 
@@ -87,5 +87,4 @@ a {
 export const ErrorMessage = styled.p`
 color: #ffffff;
 margin-top: 2px;
-font-size: 10px;
 `

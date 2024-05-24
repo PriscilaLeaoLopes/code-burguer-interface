@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ToastContainer } from 'react-toastify';
 
 
 import Login from './containers/Login';
+import Register from './containers/Register';
+
 import GlobalStyles from './styles/globalStyles';
 
 
@@ -12,7 +15,8 @@ root.render(
 
   <>
   <Login />
-  < GlobalStyles />
+  <ToastContainer autoClose={2000}/>
+  <GlobalStyles />
 
   </>,
 );
