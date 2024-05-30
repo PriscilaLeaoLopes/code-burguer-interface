@@ -1,10 +1,11 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { toast } from 'react'
+import { toast } from 'react-toastify'
 
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
+import { useUser } from '../../hooks/UserContext'
 import Button from '../../components/Button'
 import  LoginImg from '../../assets/login-image.svg'
 import  Logo from '../../assets/logo.svg'
@@ -19,9 +20,13 @@ import {
     SignInLink,
     ErrorMessage,
 } from './styles'
-import { toast } from 'react-toastify'
 
 function Login() {
+   const users = useUser()
+
+   console.log(users)
+
+
   const schema = Yup.object().shape({
     email: Yup.string().email('Digite um e-mail válido')
     .required('O e-mail é obrigatório'),
