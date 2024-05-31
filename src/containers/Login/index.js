@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -22,10 +23,9 @@ import {
 } from './styles'
 
 function Login() {
-   const users = useUser()
+   const { putUserData } = useUser()
 
-   console.log(users)
-
+   
 
   const schema = Yup.object().shape({
     email: Yup.string().email('Digite um e-mail válido')
@@ -43,8 +43,8 @@ function Login() {
       });
 
       const onSubmit = async (clientData) => {
-          const response = await toast.promise(
-             api.post('/sessions', {
+          const { data } = await toast.promise(
+             api.post('sessions', {
             email: clientData.email,
             password: clientData.password,  
           }),
@@ -54,7 +54,8 @@ function Login() {
            error: 'Verifique seu e-mail e senha',
           }
         )
-        console.log(response)
+
+        putUserData(data)
       }
     
     
@@ -87,7 +88,10 @@ function Login() {
             </Button>
           </form>
           <SignInLink>
-            Não possui Conta ? <a>Sing Up</a>
+            Não possui Conta?{' '}
+            <Link style={{ color: 'white' }} to="/cadastro">
+            Sing Up
+            </Link>
           </SignInLink>
 
             </ContainerItens>
