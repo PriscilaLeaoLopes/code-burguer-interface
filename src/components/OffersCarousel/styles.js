@@ -30,7 +30,7 @@ export const  Container = styled.div `
 `
 
 export const CategoryImg = styled.img `
- 
+
 `
 export const ContainerItems = styled.div`
 display: flex;
@@ -49,6 +49,7 @@ export const Image = styled.img`
 width: 250px;
 border-radius: 10px;
 margin-bottom: 16px;
+
 `
 
 export const Button = styled.button`

@@ -84,8 +84,3 @@ a {
 }
 
 `
-export const ErrorMessage = styled.p`
-color: #ffffff;
-margin-top: 2px;
-font-size: 10px;
-`
